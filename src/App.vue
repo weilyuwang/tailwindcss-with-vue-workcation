@@ -51,73 +51,12 @@
         A selection of great work-friendly cities with lots to see and explore.
       </p>
       <div class="flex flex-wrap -mx-4">
-        <div class="mt-6 w-full px-4 lg:w-1/2 xl:w-1/3">
-          <div
-            class="flex items-center rounded-lg bg-white shadow-lg overflow-hidden"
-          >
-            <img
-              class="h-32 w-32 flex-shrink-0"
-              src="img/toronto.jpg"
-              alt="destination.imageAlt"
-            />
-            <div class="px-6 py-4">
-              <h3 class="text-lg font-semibold text-gray-800">Toronto</h3>
-              <p class="text-gray-600">$180 / night average</p>
-              <div class="mt-4">
-                <a
-                  href="#"
-                  class="text-indigo-500 hover:text-indigo-400 font-semibold text-sm"
-                  >Explore 69 properties</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="mt-6 w-full px-4 lg:w-1/2 xl:w-1/3">
-          <div
-            class="flex items-center rounded-lg bg-white shadow-lg overflow-hidden"
-          >
-            <img
-              class="h-32 w-32 flex-shrink-0"
-              src="img/miami.jpg"
-              alt="destination.imageAlt"
-            />
-            <div class="px-6 py-4">
-              <h3 class="text-lg font-semibold text-gray-800">Miami</h3>
-              <p class="text-gray-600">$195 / night average</p>
-              <div class="mt-4">
-                <a
-                  href="#"
-                  class="text-indigo-500 hover:text-indigo-400 font-semibold text-sm"
-                  >Explore 110 properties</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="mt-6 w-full px-4 lg:w-1/2 xl:w-1/3">
-          <div
-            class="flex items-center rounded-lg bg-white shadow-lg overflow-hidden"
-          >
-            <img
-              class="h-32 w-32 flex-shrink-0"
-              src="img/seattle.jpg"
-              alt="destination.imageAlt"
-            />
-            <div class="px-6 py-4">
-              <h3 class="text-lg font-semibold text-gray-800">Seattle</h3>
-              <p class="text-gray-600">$135 / night average</p>
-              <div class="mt-4">
-                <a
-                  href="#"
-                  class="text-indigo-500 hover:text-indigo-400 font-semibold text-sm"
-                  >Explore 120 properties</a
-                >
-              </div>
-            </div>
-          </div>
+        <div
+          class="mt-6 w-full px-4 lg:w-1/2 xl:w-1/3"
+          v-bind:key="destination.name"
+          v-for="destination in popularDestinations"
+        >
+          <DestinationCard :destination="destination" />
         </div>
       </div>
     </div>
@@ -125,9 +64,61 @@
 </template>
 
 <script>
+import DestinationCard from "./components/DestinationCard";
+
 export default {
   name: "App",
-  components: {},
+  components: {
+    DestinationCard,
+  },
+  data() {
+    return {
+      popularDestinations: [
+        {
+          city: "Toronto",
+          averagePrice: 120,
+          propertyCount: 76,
+          imageUrl: "/img/toronto.jpg",
+          imageAlt: "Toronto skyline",
+        },
+        {
+          city: "Malibu",
+          averagePrice: 215,
+          propertyCount: 43,
+          imageUrl: "/img/malibu.jpg",
+          imageAlt: "Cliff in Malibu",
+        },
+        {
+          city: "Chicago",
+          averagePrice: 130,
+          propertyCount: 115,
+          imageUrl: "/img/chicago.jpg",
+          imageAlt: "Chicago skyline",
+        },
+        {
+          city: "Seattle",
+          averagePrice: 135,
+          propertyCount: 63,
+          imageUrl: "/img/seattle.jpg",
+          imageAlt: "Seattle skyline",
+        },
+        {
+          city: "Colorado",
+          averagePrice: 85,
+          propertyCount: 47,
+          imageUrl: "/img/colorado.jpg",
+          imageAlt: "Lake in Colorado",
+        },
+        {
+          city: "Miami",
+          averagePrice: 115,
+          propertyCount: 86,
+          imageUrl: "/img/miami.jpg",
+          imageAlt: "Beach in Miami",
+        },
+      ],
+    };
+  },
 };
 </script>
 
