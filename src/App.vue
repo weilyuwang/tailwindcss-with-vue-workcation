@@ -7,7 +7,7 @@
       <div class="xl:max-w-lg xl:ml-auto">
         <img class="h-10" src="img/logo-blue.svg" alt="Workcation" />
         <img
-          class="mt-6 rounded-lg shadow-xl sm:mt-8 sm:h-64 sm:w-full sm:object-cover sm:object-center lg:hidden"
+          class="mt-6 rounded-lg shadow-xl sm:mt-8 sm:h-68 sm:w-full sm:object-cover sm:object-center lg:hidden"
           src="img/beach-work.jpg"
           alt="Women workcationing on the beach"
         />
@@ -16,7 +16,7 @@
         >
           You can work from anywhere.
           <br class="hidden lg:inline" />
-          <span class="text-indigo-400">Take advantage of it.</span>
+          <span class="text-brand-blue">Take advantage of it.</span>
         </h1>
         <p class="mt-2 text-gray-600 sm:text-xl">
           Workcation helps you find work-friendly rentals in beautiful locations
@@ -26,7 +26,9 @@
           <!-- links are inline elements by default, which means you can't add paddings to them properly
           so lets make this inline-block so that it accepts paddings gracefully -->
           <!-- An inline element does not start on a new line and it only takes up as much width as necessary. -->
-          <a href="#" class="btn btn-indigo shadow-lg sm:text-base"
+          <a
+            href="#"
+            class="btn bg-brand-blue text-white shadow-lg sm:text-base"
             >Book your escape</a
           >
           <a href="#" class="ml-2 btn btn-gray sm:text-base">Learn more</a>
