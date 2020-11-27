@@ -37,9 +37,14 @@ npm uninstall tailwindcss postcss autoprefixer
 npm install tailwindcss@npm:@tailwindcss/postcss7-compat postcss@^7 autoprefixer@^9
 ```
 
-### Set up tailwind config files
+### Set up tailwind.config and postcss.config files
 ```
 npx tailwindcss init -p   
+
+- Note: if see error like `Cannot find module 'autoprefixer'`,
+  try above:
+
+npx tailwindcss init -p 
 ```
 
 ### Create tailwind.css
