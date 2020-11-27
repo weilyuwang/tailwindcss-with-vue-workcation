@@ -83,3 +83,25 @@ module.exports = {
 
 - Now whenever you compile your CSS with NODE_ENV set to production,
 Tailwind will automatically purge unused styles from your CSS.
+
+
+## Host with Firebase
+
+live site: [https://vue-tailwind-workcation.web.app/]
+
+### Build project
+```
+npm run build
+```
+
+### Init Firebase project 
+```
+firebase login
+firebase init
+
+Note: Pick /dist folder as the public directory
+```
+### Deploy
+```
+firebase deploy
+```
