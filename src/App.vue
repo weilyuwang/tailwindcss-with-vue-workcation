@@ -15,9 +15,8 @@
           class="mt-6 text-2xl font-bold text-gray-900 leading-tight sm:text-4xl sm:mt-8 lg:text-3xl xl:text-4xl"
         >
           You can work from anywhere.
-          <br class="hidden lg:inline" /><span class="text-indigo-400"
-            >Take advantage of it.</span
-          >
+          <br class="hidden lg:inline" />
+          <span class="text-indigo-400">Take advantage of it.</span>
         </h1>
         <p class="mt-2 text-gray-600 sm:text-xl">
           Workcation helps you find work-friendly rentals in beautiful locations
@@ -53,8 +52,8 @@
       <div class="flex flex-wrap -mx-4">
         <div
           class="mt-6 w-full px-4 lg:w-1/2 xl:w-1/3"
-          v-bind:key="destination.name"
           v-for="destination in popularDestinations"
+          :key="destination.name"
         >
           <DestinationCard :destination="destination" />
         </div>
@@ -122,5 +121,36 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.btn {
+  @apply inline-block px-5 py-3 rounded-lg text-sm font-semibold uppercase tracking-wider;
+}
+
+.btn:focus {
+  @apply outline-none focus:ring;
+}
+
+.btn-indigo {
+  @apply bg-indigo-500 text-sm text-white;
+}
+
+.btn-indigo:hover {
+  @apply bg-indigo-400;
+}
+
+.btn-indigo:active {
+  @apply bg-indigo-600;
+}
+
+.btn-gray {
+  @apply bg-gray-400 text-sm text-gray-800;
+}
+
+.btn-gray:hover {
+  @apply bg-gray-300;
+}
+
+.btn-gray:active {
+  @apply bg-gray-500;
+}
 </style>
