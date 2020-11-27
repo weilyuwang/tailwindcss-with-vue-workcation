@@ -34,7 +34,7 @@ export default {
 Note that: without scoped keyword the styles will be global -->
 <style scoped>
 .link {
-  @apply text-indigo-500 hover:text-indigo-400 font-semibold text-sm;
+  @apply text-brand-blue font-semibold text-sm;
 }
 .card {
   @apply flex items-center rounded-lg bg-white shadow-lg overflow-hidden;
