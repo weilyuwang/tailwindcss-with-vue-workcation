@@ -60,3 +60,26 @@ e.g. create the tailwind.css file under /assets/css directory
 ```
 import "./assets/css/tailwind.css";
 ```
+
+
+## Optimizing for Production with Purgecss
+
+### Install dependency
+```
+npm install -D @fullhuman/postcss-purgecss
+```
+
+### Config postcss
+```
+Update tailwind.config.js file, provide an array of paths to all of your template files using the purge option:
+
+// tailwind.config.js
+
+module.exports = {
+  purge: ["./src/**/*.vue", "./public/index.html"],
+  ...
+};
+```
+
+- Now whenever you compile your CSS with NODE_ENV set to production,
+Tailwind will automatically purge unused styles from your CSS.
