@@ -1,6 +1,10 @@
 <template>
   <div class="bg-white rounded-lg overflow-hidden">
-    <img :src="property.imageUrl" :alt="property.imageAlt" />
+    <img
+      class="h-64 w-full object-cover"
+      :src="property.imageUrl"
+      :alt="property.imageAlt"
+    />
 
     <div class="p-6">
       <div class="flex items-baseline">
