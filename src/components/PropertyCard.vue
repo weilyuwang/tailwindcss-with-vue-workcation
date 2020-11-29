@@ -1,10 +1,10 @@
 <template>
   <div>
-    <!-- Fixed aspect radio trick: pb-2/3 (padding-bottom: 67%) will create a 2:3 rectangle -->
+    <!-- Fixed aspect ratio trick: pb-2/3 (padding-bottom: 67%) will create a 2:3 rectangle -->
     <div class="relative pb-5/6">
       <!--absolute h-full w-full makes the image cover its parent (the 2:3 rectangle) -->
       <img
-        class="absolute h-full w-full object-cover rounded-lg shadow-md"
+        class="absolute h-full w-full object-cover rounded-lg shadow-lg"
         :src="property.imageUrl"
         :alt="property.imageAlt"
       />

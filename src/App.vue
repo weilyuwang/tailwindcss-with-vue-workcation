@@ -1,5 +1,9 @@
 <template>
   <div id="app" class="antialiased">
+    <div>
+      <Navbar />
+    </div>
+
     <div class="bg-gray-100 flex">
       <!-- mx-auto will center the body for you-->
       <div
@@ -77,12 +81,14 @@
 <script>
 import DestinationCard from "./components/DestinationCard";
 import PropertyCard from "./components/PropertyCard";
+import Navbar from "./components/Navbar";
 
 export default {
   name: "App",
   components: {
     DestinationCard,
     PropertyCard,
+    Navbar,
   },
   data() {
     return {
