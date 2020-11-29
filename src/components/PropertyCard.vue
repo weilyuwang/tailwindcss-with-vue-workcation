@@ -3,10 +3,18 @@
     <img :src="property.imageUrl" :alt="property.imageAlt" />
 
     <div class="p-6">
-      <div class="text-gray-600 text-xs uppercase font-semibold tracking-wide">
-        {{ property.beds }} beds &bull; {{ property.baths }} baths
+      <div class="flex items-baseline">
+        <span
+          class="inline-block bg-green-200 text-green-800 text-xs px-2 rounded-full uppercase font-semibold tracking-wide"
+          >New</span
+        >
+        <div
+          class="ml-2 text-gray-600 text-xs uppercase font-semibold tracking-wide"
+        >
+          {{ property.beds }} beds &bull; {{ property.baths }} baths
+        </div>
       </div>
-      <h4 class="font-semibold text-lg truncate">
+      <h4 class="mt-1 font-semibold text-lg truncate">
         {{ property.title }}
       </h4>
       <div class="mt-1">
@@ -18,7 +26,7 @@
         <svg
           v-for="i in 5"
           :key="i"
-          :class="i <= property.rating ? 'text-yellow-500' : 'text-gray-400'"
+          :class="i <= property.rating ? 'text-green-500' : 'text-gray-400'"
           class="h-5 fill-current"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
