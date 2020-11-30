@@ -28,16 +28,20 @@
             locations so you can enjoy some nice weather even when you're not on
             vacation.
           </p>
-          <div class="mt-4 sm:mt-6">
+          <div class="mt-4 flex flex-col items-start xs:block">
             <!-- links are inline elements by default, which means you can't add paddings to them properly
           so lets make this inline-block so that it accepts paddings gracefully -->
             <!-- An inline element does not start on a new line and it only takes up as much width as necessary. -->
             <a
               href="#"
-              class="btn bg-brand-blue text-white shadow-lg sm:text-base"
+              class="btn block xs:inline-block bg-brand-blue text-white shadow-lg md:text-base"
               >Book your escape</a
             >
-            <a href="#" class="ml-2 btn btn-gray sm:text-base">Learn more</a>
+            <a
+              href="#"
+              class="btn block mt-3 xs:inline-block xs:ml-3 btn-gray md:text-base"
+              >Learn more</a
+            >
           </div>
         </div>
       </div>
@@ -71,24 +75,21 @@
     </div>
 
     <!-- Build a Card Component -->
-    <div
-      class="min-h-screen p-8 flex items-center justify-center text-gray-900"
-    >
+    <!-- <div class="p-8 flex items-center justify-center text-gray-900">
       <PropertyCard :property="property" />
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script>
 import DestinationCard from "./components/DestinationCard";
-import PropertyCard from "./components/PropertyCard";
+// import PropertyCard from "./components/PropertyCard";
 import Navbar from "./components/Navbar";
 
 export default {
   name: "App",
   components: {
     DestinationCard,
-    PropertyCard,
     Navbar,
   },
   data() {
@@ -157,7 +158,7 @@ export default {
 
 <style scoped>
 .btn {
-  @apply inline-block px-5 py-3 rounded-lg text-sm font-semibold uppercase tracking-wider;
+  @apply px-5 py-3 rounded-lg text-sm font-semibold uppercase tracking-wider;
 }
 
 .btn:focus {
