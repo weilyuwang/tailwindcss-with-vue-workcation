@@ -70,10 +70,18 @@
       </div>
     </div>
 
+    <!-- Build a Card Component -->
     <div
       class="min-h-screen p-8 flex items-center justify-center text-gray-900"
     >
       <PropertyCard :property="property" />
+    </div>
+
+    <!-- Build a Dropdown Component -->
+    <div
+      class="bg-gray-300 min-h-screen py-32 px-6 flex items-center justify-center"
+    >
+      <AccountDropdown />
     </div>
   </div>
 </template>
@@ -82,6 +90,7 @@
 import DestinationCard from "./components/DestinationCard";
 import PropertyCard from "./components/PropertyCard";
 import Navbar from "./components/Navbar";
+import AccountDropdown from "./components/AccountDropdown";
 
 export default {
   name: "App",
@@ -89,6 +98,7 @@ export default {
     DestinationCard,
     PropertyCard,
     Navbar,
+    AccountDropdown,
   },
   data() {
     return {
