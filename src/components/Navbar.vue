@@ -1,14 +1,14 @@
 <template>
   <!-- items-* vertically, justify-* horizontally  -->
   <header
-    class="bg-gray-800 sm:flex sm:justify-between sm:items-center sm:px-4 sm:py-3"
+    class="bg-gray-800 md:flex md:justify-between md:items-center md:px-4 md:py-3"
   >
-    <div class="flex items-center justify-between bg-gray-800 px-4 py-3 sm:p-0">
+    <div class="flex items-center justify-between bg-gray-800 px-4 py-3 md:p-0">
       <div>
         <img class="h-10" src="/img/logo-inverted.svg" alt="workcation" />
       </div>
 
-      <div class="sm:hidden">
+      <div class="md:hidden">
         <!-- button elements are inline-block by default, which means they will be affected by the line height-->
         <!-- So make it display:block so that we can manipulate its position easier -->
         <button
@@ -31,27 +31,48 @@
         </button>
       </div>
     </div>
-    <div
-      :class="isOpen ? 'block' : 'hidden'"
-      class="px-2 pt-2 pb-4 sm:flex sm:p-0 align-bottom"
-    >
-      <a
-        href="#"
-        class="block py-1 px-2 text-white font-semibold rounded hover:bg-gray-700"
-        >List your property</a
-      >
-      <a
-        href="#"
-        class="mt-1 block py-1 px-2 text-white font-semibold rounded hover:bg-gray-700 sm:mt-0 sm:ml-2"
-        >Trips</a
-      >
-      <a
-        href="#"
-        class="mt-1 block py-1 px-2 text-white font-semibold rounded hover:bg-gray-700 sm:mt-0 sm:ml-2"
-        >Messages</a
-      >
-      <AccountDropdownVue class="ml-6" />
-    </div>
+    <nav :class="isOpen ? 'block' : 'hidden'" class="md:block">
+      <div class="px-2 pt-2 pb-4 md:flex md:p-0">
+        <a
+          href="#"
+          class="block py-1 px-2 text-white font-semibold rounded hover:bg-gray-700"
+          >List your property</a
+        >
+        <a
+          href="#"
+          class="mt-1 block py-1 px-2 text-white font-semibold rounded hover:bg-gray-700 md:mt-0 md:ml-2"
+          >Trips</a
+        >
+        <a
+          href="#"
+          class="mt-1 block py-1 px-2 text-white font-semibold rounded hover:bg-gray-700 md:mt-0 md:ml-2"
+          >Messages</a
+        >
+        <AccountDropdownVue class="hidden md:block md:ml-6" />
+      </div>
+      <div class="px-4 py-5 border-t border-gray-700 md:hidden">
+        <div class="flex items-center">
+          <img
+            class="h-10 w-10 rounded-full border-2 border-gray-200 object-cover"
+            src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=256&q=80"
+            alt="Your avatar"
+          />
+          <span class="text-white font-semibold ml-3">Jane Doe</span>
+        </div>
+
+        <div class="mt-4">
+          <a href="#" class="text-gray-300 hover:text-white block">
+            Account settings
+          </a>
+          <a href="#" class="text-gray-300 hover:text-white block mt-2">
+            Support
+          </a>
+          <a href="#" class="text-gray-300 hover:text-white block mt-2">
+            Sign out
+          </a>
+        </div>
+      </div>
+    </nav>
   </header>
 </template>
 
