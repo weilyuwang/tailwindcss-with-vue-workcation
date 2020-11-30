@@ -16,7 +16,7 @@
       v-if="isOpen"
       @click="isOpen = false"
       tabindex="-1"
-      class="fixed inset-0 bg-black opacity-20 cursor-default w-full h-full"
+      class="fixed z-10 inset-0 bg-black opacity-20 cursor-default w-full h-full"
     ></button>
     <div
       v-if="isOpen"
