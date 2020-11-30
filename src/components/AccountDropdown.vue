@@ -1,7 +1,9 @@
 <template>
-  <div>
+  <div class="relative" @keydown.esc="isOpen = false">
+    <!-- Make the avatar button z-10 and postion:relative -->
     <button
-      class="block h-10 w-10 rounded-full overflow-hidden border-4 border-gray-400 focus:outline-none focus:ring"
+      @click="isOpen = !isOpen"
+      class="relative block z-10 h-10 w-10 rounded-full overflow-hidden border-2 border-gray-200 focus:outline-none focus:ring"
     >
       <img
         class="h-full w-full object-cover"
@@ -9,7 +11,17 @@
         alt="Your avatar"
       />
     </button>
-    <div class="mt-2 py-2 w-48 bg-white rounded-lg shadow-xl">
+    <!-- postion:fixed makes the element always relative to the view board-->
+    <button
+      v-if="isOpen"
+      @click="isOpen = false"
+      tabindex="-1"
+      class="fixed inset-0 bg-black opacity-20 cursor-default w-full h-full"
+    ></button>
+    <div
+      v-if="isOpen"
+      class="absolute right-0 z-10 mt-2 py-2 w-48 bg-white rounded-lg shadow-xl"
+    >
       <a
         href="#"
         class="block px-4 py-2 text-gray-800 hover:bg-indigo-400 hover:text-white"
@@ -30,7 +42,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      isOpen: false,
+    };
+  },
+};
 </script>
 
 <style>

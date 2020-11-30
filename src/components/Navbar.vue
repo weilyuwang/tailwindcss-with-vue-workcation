@@ -33,7 +33,7 @@
     </div>
     <div
       :class="isOpen ? 'block' : 'hidden'"
-      class="px-2 pt-2 pb-4 sm:flex sm:p-0"
+      class="px-2 pt-2 pb-4 sm:flex sm:p-0 align-bottom"
     >
       <a
         href="#"
@@ -50,7 +50,7 @@
         class="mt-1 block py-1 px-2 text-white font-semibold rounded hover:bg-gray-700 sm:mt-0 sm:ml-2"
         >Messages</a
       >
-      <AccountDropdownVue />
+      <AccountDropdownVue class="ml-6" />
     </div>
   </header>
 </template>
