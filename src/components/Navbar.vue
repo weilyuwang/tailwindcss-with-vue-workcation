@@ -1,12 +1,14 @@
 <template>
   <!-- items-* vertically, justify-* horizontally  -->
-  <header class="bg-gray-800">
-    <div class="flex items-center justify-between bg-gray-800 px-4 py-3">
+  <header
+    class="bg-gray-800 sm:flex sm:justify-between sm:items-center sm:px-4 sm:py-3"
+  >
+    <div class="flex items-center justify-between bg-gray-800 px-4 py-3 sm:p-0">
       <div>
         <img class="h-10" src="/img/logo-inverted.svg" alt="workcation" />
       </div>
 
-      <div>
+      <div class="sm:hidden">
         <!-- button elements are inline-block by default, which means they will be affected by the line height-->
         <!-- So make it display:block so that we can manipulate its position easier -->
         <button
@@ -29,7 +31,10 @@
         </button>
       </div>
     </div>
-    <div :class="isOpen ? 'block' : 'hidden'" class="px-2 pt-2 pb-4">
+    <div
+      :class="isOpen ? 'block' : 'hidden'"
+      class="px-2 pt-2 pb-4 sm:flex sm:p-0"
+    >
       <a
         href="#"
         class="block py-1 px-2 text-white font-semibold rounded hover:bg-gray-700"
@@ -37,12 +42,12 @@
       >
       <a
         href="#"
-        class="mt-1 block py-1 px-2 text-white font-semibold rounded hover:bg-gray-700"
+        class="mt-1 block py-1 px-2 text-white font-semibold rounded hover:bg-gray-700 sm:mt-0 sm:ml-2"
         >Trips</a
       >
       <a
         href="#"
-        class="mt-1 block py-1 px-2 text-white font-semibold rounded hover:bg-gray-700"
+        class="mt-1 block py-1 px-2 text-white font-semibold rounded hover:bg-gray-700 sm:mt-0 sm:ml-2"
         >Messages</a
       >
     </div>
